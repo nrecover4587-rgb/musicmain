@@ -46,11 +46,11 @@ async def welcome_join_request(client: Client, request: ChatJoinRequest):
             [
                 InlineKeyboardButton(
                     "💬 𝖲𝗎𝗉𝗉𝗈𝗋𝗍",
-                    url="https://t.me/Purvi_Bots", 
+                    url="https://t.me/mistubots", 
                 ),
                 InlineKeyboardButton(
                     "📢 𝖴𝗉𝖽𝖺𝗍𝖾𝗌",
-                    url="https://t.me/Purvi_Updates",
+                    url="https://t.me/mistubots",
                 ),
             ],
         ]
