@@ -22,18 +22,18 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 10000))
 
-LOGGER_ID = int(getenv("LOGGER_ID", None))
-OWNER_ID = int(getenv("OWNER_ID", 7403621976))
+LOGGER_ID = int(getenv("LOGGER_ID", -1003670305112))
+OWNER_ID = int(getenv("OWNER_ID", 8595342446))
 
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
-UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/Im-NotCoder/Hina-Autoplay")
+UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/nrecover4587-rgb/musicbots")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
-GIT_TOKEN = getenv("GIT_TOKEN", "TOKEN") # FOR PRIVATE SOURCE DEPLOYMENT 
+GIT_TOKEN = getenv("GIT_TOKEN", "ghp_bRiQzhjqiuULShRjINi3c") # FOR PRIVATE SOURCE DEPLOYMENT 
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Purvi_Bots")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/Purvi_Updates")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/mistubots")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/mistubots")
 
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 
@@ -63,14 +63,14 @@ START_IMG_URL = getenv("START_IMG_URL", "https://files.catbox.moe/x5lytj.jpg")
 PING_IMG_URL = getenv("PING_IMG_URL", "https://files.catbox.moe/leaexg.jpg")
 PLAYLIST_IMG_URL = "https://files.catbox.moe/u5ux0j.jpg"
 STATS_IMG_URL = "https://files.catbox.moe/97v75k.jpg"
-TELEGRAM_AUDIO_URL = "https://files.catbox.moe/0jpf7u.jpg"
-TELEGRAM_VIDEO_URL = "https://files.catbox.moe/0jpf7u.jpg"
-STREAM_IMG_URL = "https://files.catbox.moe/0jpf7u.jpg"
-SOUNCLOUD_IMG_URL = "https://files.catbox.moe/0jpf7u.jpg"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/0jpf7u.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/0jpf7u.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/0jpf7u.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/0jpf7u.jpg"
+TELEGRAM_AUDIO_URL = "https://files.catbox.moe/leaexg.jpg"
+TELEGRAM_VIDEO_URL = "https://files.catbox.moe/leaexg.jpg"
+STREAM_IMG_URL = "https://files.catbox.moe/leaexg.jpg"
+SOUNCLOUD_IMG_URL = "https://files.catbox.moe/leaexg.jpg"
+YOUTUBE_IMG_URL = "https://files.catbox.moe/leaexg.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/leaexg.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/leaexg.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/leaexg.jpg"
 
 
 def time_to_seconds(time):
