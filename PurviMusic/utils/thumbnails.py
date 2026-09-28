@@ -139,7 +139,7 @@ async def get_thumb(videoid: str, player_username: str = None) -> str:
     draw.text((bx, by+18), "00:00", font=small_f, fill=(180,180,180))
     draw.text((bx+bw-55, by+18), duration, font=small_f, fill=(180,180,180))
 
-    wm = "Dev :- @TheSigmaCoder"
+    wm = "Dev :- @sexypym"
     w = small_f.getlength(wm)
     draw.text((1280-w-40, 680), wm, font=small_f, fill=(255, 255, 0))
 
