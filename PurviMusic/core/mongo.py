@@ -7,16 +7,16 @@
 # =======================================================
 
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import MONGO_DB_URI
+from config import MONGO_DB_URI, DB_NAME
 from ..logging import LOGGER
 
 LOGGER(__name__).info("» 𝐂ᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ʏᴏᴜʀ ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ...")
 try:
     _mongo_async_ = AsyncIOMotorClient(MONGO_DB_URI)
-    mongodb = _mongo_async_.Purvi
+    mongodb = _mongo_async_[DB_NAME]
     LOGGER(__name__).info("» 𝐂ᴏɴɴᴇᴄᴛᴇᴅ ᴛᴏ ʏᴏᴜʀ ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ.")
-except:
-    LOGGER(__name__).error("» 𝐅ᴀɪʟᴇᴅ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ʏᴏᴜʀ ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ.")
+except Exception as e:
+    LOGGER(__name__).error(f"» 𝐅ᴀɪʟᴇᴅ ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ʏᴏᴜʀ ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ: {e}")
     exit()
 
 # ======================================================
