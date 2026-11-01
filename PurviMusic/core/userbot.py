@@ -58,7 +58,7 @@ class Userbot(Client):
             await self.one.start()
             try:
                 await self.one.join_chat("mistubots")
-                await self.one.join_chat("teammistubots")
+                await self.one.join_chat("mistubots")
             except:
                 pass
             assistants.append(1)
