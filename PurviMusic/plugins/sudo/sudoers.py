@@ -14,7 +14,7 @@ from PurviMusic.utils.extraction import extract_user
 from config import BANNED_USERS, OWNER_ID
 
 PREFIXES = ["/", "!", "%", ",", "", ".", "@", "#"]
-SUDO_PHOTO = "https://files.catbox.moe/iuimfy.jpg"
+SUDO_PHOTO = "https://files.catbox.moe/fu6jk3.jpg"
 SUDO_CAPTION = (
     "**» ᴄʜᴇᴄᴋ sᴜᴅᴏ ʟɪsᴛ ʙʏ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ.**\n\n"
     "**» ɴᴏᴛᴇ:** ᴏɴʟʏ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴠɪᴇᴡ."
