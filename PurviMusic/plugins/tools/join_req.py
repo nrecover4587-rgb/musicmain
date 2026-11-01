@@ -1,9 +1,6 @@
-# =======================================================
-# ©️ 2026-27 All Rights Reserved by Purvi Bots (Im-Notcoder) 🚀
 
-# This source code is under MIT License 📜 Unauthorized forking, importing, or using this code without giving proper credit will result in legal action ⚠️
- 
-# 📩 DM for permission : @TheSigmaCoder
+# =======================================================
+# JOIN REQUEST WELCOME
 # =======================================================
 
 from pyrogram import Client
@@ -14,65 +11,74 @@ from pyrogram.types import (
 )
 from pyrogram.errors import PeerIdInvalid, UserIsBlocked
 
-import config
 from PurviMusic import app
+
+
+PHOTO_URL = "https://graph.org/file/2b3018967643235f9a59f-6de55f5df207151c2b.jpg"
 
 
 @app.on_chat_join_request()
 async def welcome_join_request(client: Client, request: ChatJoinRequest):
+
     user = request.from_user
     chat = request.chat
 
     if not user:
         return
-      
-    photo_url = "https://files.catbox.moe/472piq.jpg" 
 
     caption = (
-        f"**𝖧𝖾𝗒 {user.mention} 👋**\n"
-        f"**𝖳𝗁𝖺𝗇𝗄𝗌 𝖥𝗈𝗋 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝗂𝗇𝗀 𝖳𝗈 𝖩𝗈𝗂𝗇 {chat.title} 🎵**\n\n"
-        f"**𝖨'𝗆 {app.mention} - 𝖠 𝖧𝗂𝗀𝗁 𝖰𝗎𝖺𝗅𝗂𝗍𝗒 𝖬𝗎𝗌𝗂𝖼 𝖲𝗍𝗋𝖾𝖺𝗆𝗂𝗇𝗀 𝖡𝗈𝗍 𝖥𝗈𝗋 𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝖦𝗋𝗈𝗎𝗉𝗌 & 𝖢𝗁𝖺𝗇𝗇𝖾𝗅𝗌 🚀**\n\n"
-        f"**𝖩𝗎𝗌𝗍 𝖲𝖾𝗇𝖽 /start 𝖳𝗈 𝖲𝖾𝖾 𝖡𝗈𝗍 𝖬𝖾𝗇𝗎 𝖠𝗇𝖽 𝖢𝗈𝗆𝗆𝖺𝗇𝖽𝗌 📋**"
+        f"<blockquote><b>💐 ʜᴇʏ {user.mention} 👋</b></blockquote>\n"
+        f"<blockquote expandable><b>💮 ᴛʜᴀɴᴋs ғᴏʀ ʀᴇǫᴜᴇsᴛɪɴɢ ᴛᴏ ᴊᴏɪɴ {chat.title} 🎵</b>\n\n"
+        f"<b>ɪ'ᴍ {app.mention} - ᴀ ʜɪɢʜ ǫᴜᴀʟɪᴛʏ ᴍᴜsɪᴄ sᴛʀᴇᴀᴍɪɴɢ ʙᴏᴛ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘs & ᴄʜᴀɴɴᴇʟs 🚀</b>\n\n"
+        f"<b>📋 ᴊᴜsᴛ sᴇɴᴅ /start ᴛᴏ sᴇᴇ ʙᴏᴛ ᴍᴇɴᴜ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs 📋</b></blockquote>"
     )
 
     keyboard = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    "➕ 𝖠𝖽𝖽 𝖬𝖾 𝖨𝗇 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉",
+                    "➕ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
                     url=f"https://t.me/{app.username}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    "💬 𝖲𝗎𝗉𝗉𝗈𝗋𝗍",
-                    url="https://t.me/mistubots", 
-                ),
+                    "🎁 ᴛᴀᴘ ᴛᴏ ᴄʟᴀɪᴍ ʏᴏᴜʀ sᴜʀᴘʀɪsᴇ 🎁",
+                    url=f"https://t.me/{app.username}?start=start",
+                )
+            ],
+            [
                 InlineKeyboardButton(
-                    "📢 𝖴𝗉𝖽𝖺𝗍𝖾𝗌",
-                    url="https://t.me/mistubots",
-                ),
+                    "🛒 ʙᴜʏ ᴛɢ ᴀᴄᴄᴏᴜɴᴛ ғʀᴏᴍ ʜᴇʀᴇ",
+                    url="https://t.me/AccountStoreTGbot",
+                )
             ],
         ]
     )
 
     try:
-      
         await client.send_photo(
-            user.id,
-            photo=photo_url,
+            chat_id=user.id,
+            photo=PHOTO_URL,
             caption=caption,
             reply_markup=keyboard,
+            parse_mode="html",
         )
+
+        try:
+            await client.send_message(
+                chat_id=user.id,
+                text="/start",
+            )
+
+        except Exception as e:
+            print(f"Failed to send /start to {user.id}: {e}")
+
     except (PeerIdInvalid, UserIsBlocked):
         pass
-    except Exception:
-        pass
 
-# ======================================================
-# ©️ 2025-26 All Rights Reserved by Purvi Bots (Im-Notcoder) 😎
+    except Exception as e:
+        print(f"Join request welcome failed for {user.id}: {e}")
 
-# 🧑‍💻 Developer : t.me/TheSigmaCoder
-# 🔗 Source link : GitHub.com/Im-Notcoder/Hina-Music
-# 📢 Telegram channel : t.me/Purvi_Bots
+
 # =======================================================
