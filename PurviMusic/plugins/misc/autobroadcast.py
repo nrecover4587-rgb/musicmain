@@ -1,11 +1,3 @@
-# =======================================================
-# ©️ 2026-27 All Rights Reserved by Purvi Bots (Im-Notcoder) 🚀
-
-# This source code is under MIT License 📜 Unauthorized forking, importing, or using this code without giving proper credit will result in legal action ⚠️
- 
-# 📩 DM for permission : @TheSigmaCoder
-# =======================================================
-
 import asyncio
 
 from pyrogram import filters
@@ -13,7 +5,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import FloodWait
 
 from PurviMusic import app
-from PurviMusic.utils.database import get_served_users, get_served_chats
+from PurviMusic.utils.database import get_served_users
 from config import OWNER_ID
 
 IMAGE_URL = "https://files.catbox.moe/472piq.jpg"
@@ -41,10 +33,8 @@ BUTTONS = InlineKeyboardMarkup(
 
 async def send_broadcast():
     users = await get_served_users()
-    chats = await get_served_chats()
 
     user_count = len(users)
-    chat_count = len(chats)
 
     total_sent = 0
 
@@ -64,21 +54,6 @@ async def send_broadcast():
         except:
             pass
 
-    for chat in chats:
-        chat_id = int(chat["chat_id"])
-        try:
-            await app.send_photo(
-                chat_id,
-                photo=IMAGE_URL,
-                caption=MESSAGES,
-                reply_markup=BUTTONS
-            )
-            total_sent += 1
-            await asyncio.sleep(3)
-        except FloodWait as e:
-            await asyncio.sleep(e.value)
-        except:
-            pass
     buttons = InlineKeyboardMarkup(
         [
             [
@@ -93,7 +68,7 @@ async def send_broadcast():
     text = f"""**<u>✅ ᴀᴜᴛᴏ ʙʀᴏᴀᴅᴄᴀꜱᴛ ᴅᴏɴᴇ</u>**
 
 **👤 ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ :** `{user_count}`
-**👥 ᴛᴏᴛᴀʟ ɢʀᴏᴜᴘꜱ :** `{chat_count}`
+**✅ ꜱᴇɴᴛ :** `{total_sent}`
 """
 
     msg = await app.send_message(
@@ -121,11 +96,3 @@ async def auto_broadcast():
 
 
 asyncio.get_event_loop().create_task(auto_broadcast())
-
-# ======================================================
-# ©️ 2025-26 All Rights Reserved by Purvi Bots (Im-Notcoder) 😎
-
-# 🧑‍💻 Developer : t.me/TheSigmaCoder
-# 🔗 Source link : GitHub.com/Im-Notcoder/Hina-Music
-# 📢 Telegram channel : t.me/Purvi_Bots
-# =======================================================
