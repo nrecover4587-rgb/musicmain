@@ -31,7 +31,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv("UPSTREAM_REPO", "https://github.com/nrecover4587-rgb/musicbots")
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
-GIT_TOKEN = getenv("GIT_TOKEN", "ghp_bRiQzhjqiuULShRjINi3c") # FOR PRIVATE SOURCE DEPLOYMENT 
+GIT_TOKEN = getenv("GIT_TOKEN", "") # FOR PRIVATE SOURCE DEPLOYMENT 
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/mistubots")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/mistubots")
