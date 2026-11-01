@@ -1,3 +1,4 @@
+
 import asyncio
 
 from pyrogram import filters
@@ -25,6 +26,12 @@ BUTTONS = InlineKeyboardMarkup(
             InlineKeyboardButton(
                 "⊚ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⊚",
                 url=f"https://t.me/{app.username}?startgroup=true",
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                "🛒 ʙᴜʏ ᴛɢ ᴀᴄᴄᴏᴜɴᴛ ғʀᴏᴍ ʜᴇʀᴇ",
+                url="https://t.me/AccountStoreTGbot",
             )
         ]
     ]
